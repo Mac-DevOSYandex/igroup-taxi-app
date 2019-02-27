@@ -1,0 +1,7 @@
+{
+  "name": "igroup-taxi-app",
+  "type": "angular",
+  "integrations": {
+    "cordova": {}
+  }
+}
