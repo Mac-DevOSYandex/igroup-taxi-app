@@ -1,17 +1,13 @@
-import { Component, ViewEncapsulation } from '@angular/core';
-
+import { Component, OnInit } from '@angular/core';
 import { PopoverController } from '@ionic/angular';
 import { MoreMenuPopover } from '../../components/popovers/more-menu-popover';
-// import { PopoverPage } from '../about-popover/about-popover';
 
 @Component({
-  selector: 'page-about',
-  templateUrl: 'about.html',
-  styleUrls: ['./about.scss'],
+  selector: 'ig-welcome',
+  templateUrl: './welcome.page.html',
+  styleUrls: ['./welcome.page.scss'],
 })
-export class AboutPage {
-  conferenceDate = '2047-05-17';
-
+export class WelcomePage implements OnInit {
   constructor(public popoverCtrl: PopoverController) {}
 
   async presentPopover(event: Event) {
@@ -21,4 +17,6 @@ export class AboutPage {
     });
     await popover.present();
   }
+
+  ngOnInit() {}
 }

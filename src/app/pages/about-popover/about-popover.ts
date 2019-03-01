@@ -21,7 +21,7 @@ import { PopoverController } from '@ionic/angular';
         <ion-label>Support</ion-label>
       </ion-item>
     </ion-list>
-  `
+  `,
 })
 export class PopoverPage {
   constructor(public popoverCtrl: PopoverController) {}

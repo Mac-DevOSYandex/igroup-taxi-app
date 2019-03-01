@@ -2,12 +2,26 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { TabsPage } from './tabs-page';
 import { SchedulePage } from '../schedule/schedule';
+import { WelcomePage } from '../welcome/welcome.page';
 
 const routes: Routes = [
   {
     path: 'tabs',
     component: TabsPage,
     children: [
+      {
+        path: 'welcome',
+        children: [
+          {
+            path: '',
+            component: WelcomePage,
+          },
+          // {
+          //   path: 'session/:sessionId',
+          //   loadChildren: '../session-detail/session-detail.module#SessionDetailModule',
+          // },
+        ],
+      },
       {
         path: 'schedule',
         children: [
@@ -67,10 +81,15 @@ const routes: Routes = [
       },
       {
         path: '',
-        redirectTo: '/app/tabs/schedule',
+        redirectTo: '/app/tabs/welcome',
         pathMatch: 'full',
       },
     ],
+  },
+  {
+    path: '',
+    redirectTo: '/app/tabs/welcome',
+    pathMatch: 'full',
   },
 ];
 

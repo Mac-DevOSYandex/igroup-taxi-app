@@ -14,14 +14,14 @@ import { UserData } from '../../providers/user-data';
 export class AppMenuComponent implements OnInit {
   appPagesMenu = [
     {
-      title: 'Schedule',
-      url: '/app/tabs/schedule',
-      icon: 'calendar',
+      title: 'Welcome',
+      url: '/app/tabs/welcome',
+      icon: 'globe',
     },
     {
       title: 'Car Pool',
       url: '/app/tabs/carpool',
-      icon: 'contacts',
+      icon: 'people',
     },
     {
       title: 'Taxi',
@@ -81,11 +81,16 @@ export class AppMenuComponent implements OnInit {
     });
   }
 
-  logout() {
-    this.userData.logout().then(() => {
-      return this.router.navigateByUrl('/app/tabs/schedule');
-    });
+  async logout() {
+    await this.userData.logout();
+    return this.router.navigateByUrl('/app/tabs/welcome');
   }
+
+  // logout() {
+  //   this.userData.logout().then(() => {
+  //     return this.router.navigateByUrl('/app/tabs/welcome');
+  //   });
+  // }
 
   openTutorial() {
     this.menu.enable(false);

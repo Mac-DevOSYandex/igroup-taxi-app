@@ -1,0 +1,64 @@
+@keyframes spin {
+    to {
+        transform : rotates(360deg);
+    }
+}
+
+.spin {
+    animation: spin 2000 linear infinite;
+}
+
+
+
+.themes {
+    igroup: {
+    primary: #870099;
+    secondary: #0f3b2c;
+    tertiary: #d45a29;
+    light: #ebe8e7;
+    medium: #f5c18a;
+    dark: #9b7d5d;
+    };
+
+    dark: {
+        primary: #686769;
+        secondary: #b8b849;
+        tertiary: #9e807e;
+        light: #f7f7ff;
+        medium: #8fa2b1;
+        dark: #495867;
+    };
+
+
+    light: {
+        primary: #e1e2e1;
+        secondary: #af984a;
+        tertiary: #a3997a;
+        light: #343435;
+        medium: #8a8c8f;
+        dark: #495867;
+    };
+
+    neon: {
+        primary: #393fbd;
+        secondary: #4ce0b3;
+        tertiary: #ff5e79;
+        light: #f4edf2;
+        medium: #b682a5;
+        dark: #34162a;
+    }
+}
+
+.defaults {
+    default-theme: {
+      primary: #3880ff;
+      secondary: #0cd1e8;
+      tertiary: #7044ff;
+      success: #10dc60;
+      warning: #ffce00;
+      danger: #f04141;
+      dark: #222428;
+      medium: #989aa2;
+      light: #f4f5f8;
+    }
+};
