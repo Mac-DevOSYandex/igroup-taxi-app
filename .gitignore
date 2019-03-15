@@ -14,9 +14,11 @@ log.txt
 npm-debug.log*
 .firebase/
 .idea/
+.notes/
 .sourcemaps/
 .sass-cache/
 .tmp/
+
 .versions/
 coverage/
 dist/
