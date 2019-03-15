@@ -1,64 +1,48 @@
-# Ionic Angular Conference Application
+# Ionic Multi-level Routing Example
 
-This application is purely a kitchen-sink demo of the Ionic Framework and Angular.
+This example is purely to demo multi-level routing of the Ionic Framework and Angular Router with Lazy Loading components/pages. In a real application guards would be used to load and activate certain routes accordingly.
 
-**There is not an actual Ionic Conference at this time.** This project is just to show off Ionic components in a real-world application. Please go through the steps in [CONTRIBUTING](https://github.com/ionic-team/ionic-conference-app/blob/master/.github/CONTRIBUTING.md) before submitting an issue.
+**The about page Ionic Conference, alas...**
 
+This example is just to show off Ionic components and Angular's routing capabilities. The simple login page is just that, a mock up. It's purpose is to show off the multi-level routing.
 
 ## Table of Contents
-- [Getting Started](#getting-started)
-- [Contributing](#contributing)
-- [App Preview](#app-preview)
-- [Deploying](#deploying)
-  - [Progressive Web App](#progressive-web-app)
-  - [Android](#android)
-  - [iOS](#ios)
 
+-   [Ionic Multi-level Routing Example](#ionic-multi-level-routing-example)
+    -   [Table of Contents](#table-of-contents)
+    -   [Getting Started](#getting-started)
+    -   [App Preview](#app-preview)
 
 ## Getting Started
 
-* [Download the installer](https://nodejs.org/) for Node.js 6 or greater.
-* Install the ionic CLI globally: `npm install -g ionic`
-* Clone this repository: `git clone https://github.com/ionic-team/ionic-conference-app.git`.
-* Run `npm install` from the project root.
-* Run `ionic serve` in a terminal from the project root.
-* Profit. :tada:
+-   [Download the installer](https://nodejs.org/) for Node.js 6 or greater.
+-   Install the ionic CLI globally: `npm install -g ionic`
+-   Clone this repository: `git clone https://github.com/ionic-team/ionic-multilevel-routing.git`.
+-   Run `npm install` from the project root.
+-   Run `ionic serve` in a terminal from the project root.
+-   There you have it!
 
-_Note: See [How to Prevent Permissions Errors](https://docs.npmjs.com/getting-started/fixing-npm-permissions) if you are running into issues when trying to install packages globally._
-
-## Contributing
-See [CONTRIBUTING.md](https://github.com/ionic-team/ionic-conference-app/blob/master/.github/CONTRIBUTING.md) :tada::+1:
-
+-   <i>Tip</i>: See [How to Prevent Permissions Errors](https://docs.npmjs.com/getting-started/fixing-npm-permissions) if you are running into issues when trying to install packages globally.\_
 
 ## App Preview
 
-All app preview screenshots were taken by running `ionic serve --lab` on a retina display.
+All app preview screenshots were taken by running `ionic serve` then using developer design mode on a retina display.
+NB. It has not been tested on a simulator.
 
-- [Schedule Page](https://github.com/ionic-team/ionic-conference-app/blob/master/src/app/pages/schedule/schedule.html)
+-   [Welcome Page](/src/assets/scrnsht/welcome.jpg)
 
-  <img src="resources/screenshots/SchedulePage.png" alt="Schedule">
+    <img src="./src/assets/scrnsht/welcome.jpg" width="180" alt="Welcome">
 
+-   [Login Page](/src/assets/scrnsht/login.jpg)
 
-- [About Page](https://github.com/ionic-team/ionic-conference-app/blob/master/src/app/pages/about/about.html)
+    <img src="./src/assets/scrnsht/login.jpg" width="180"  alt="Welcome">
 
-  <img src="resources/screenshots/AboutPage.png" alt="Schedule">
+-   [Register Page](/src/assets/scrnsht/register.jpg)
 
+    <img src="./src/assets/scrnsht/register.jpg" width="180"  alt="Welcome">
 
-- To see more images of the app, check out the [screenshots directory](https://github.com/ionic-team/ionic-conference-app/tree/master/resources/screenshots)!
+*   [About Page](/src/assets/scrnsht/AboutPage.jpg)
 
+    <img src="./src/assets/scrnsht/AboutPage.jpg" width="180"  alt="About">
 
-## Deploying
-
-### Progressive Web App
-
-1. Un-comment [these lines](https://github.com/ionic-team/ionic2-app-base/blob/master/src/index.html#L21)
-2. Run `npm run ionic:build --prod`
-3. Push the `www` folder to your hosting service
-
-### Android
-
-1. Run `ionic cordova run android --prod`
-
-### iOS
-
-1. Run `ionic cordova run ios --prod`
+> **<b>Note</b>, the use of [global](/src/global.scss) background image and how it is applied in the local scss file...**

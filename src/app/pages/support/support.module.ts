@@ -3,17 +3,22 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 import { SupportPage } from './support';
-import { SupportPageRoutingModule } from './support-routing.module';
+import { Routes, RouterModule } from '@angular/router';
 
+const routes: Routes = [
+  {
+    path: '',
+    component: SupportPage,
+  },
+];
 @NgModule({
   imports: [
     CommonModule,
-    FormsModule,
+    FormsModule, //
+    RouterModule.forChild(routes),
     IonicModule,
-    SupportPageRoutingModule
   ],
-  declarations: [
-    SupportPage,
-  ]
+  exports: [RouterModule],
+  declarations: [SupportPage],
 })
-export class SupportModule { }
+export class SupportModule {}

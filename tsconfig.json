@@ -1,20 +1,24 @@
 {
-  "compilerOptions": {
-    "importHelpers": true,
-    "baseUrl": "./",
-    "paths": {
-      "@ig/*": ["./src/app/*"],
-      "@env/*": ["./src/environments/*"],
-      "@ass/*": ["./src/assets/*"],
-      "@theme/*": ["./src/theme/*"]
-    },
-    "outDir": "./dist/out-tsc",
-    "sourceMap": true,
-    "declaration": false,
-    "moduleResolution": "node",
-    "emitDecoratorMetadata": true,
-    "experimentalDecorators": true,
-    "target": "es5",
-    "lib": ["es2017", "dom"]
-  }
+    "compilerOptions": {
+        "importHelpers": true,
+        "baseUrl": "./",
+        "paths": {
+            "@ig/*": ["src/app/*"],
+            "@core/*": ["src/app/core/*"],
+            "@state/*": ["src/app/states/*"],
+            "@pages/*": ["src/app/pages/*"],
+            "@theme/*": ["src/theme/*"],
+            "@assets/*": ["src/assets/*"],
+            "@env": ["src/environments/*"],
+            "@providers/*": ["src/providers/*"]
+        },
+        "outDir": "./dist/out-tsc",
+        "sourceMap": true,
+        "declaration": false,
+        "moduleResolution": "node",
+        "emitDecoratorMetadata": true,
+        "experimentalDecorators": true,
+        "target": "es5",
+        "lib": ["es2017", "dom"]
+    }
 }

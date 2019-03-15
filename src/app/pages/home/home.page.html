@@ -1,0 +1,18 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Ionic Params</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-item>
+    <ion-input [(ngModel)]="value" clearInput></ion-input>
+  </ion-item>
+  <ion-button expand="full" [routerLink]="['/login']" routerDirective="forward">
+    Push With RouterLink
+  </ion-button>
+  <ion-button expand="full" (click)="pushPage()">Push With function</ion-button>
+  <ion-button expand="full" (click)="openModal()">Open Modal</ion-button>
+  <ion-button expand="full" (click)="openPopover()">Open Popover</ion-button>
+  <ion-button expand="full" (click)="alertAction()">Open Alert</ion-button>
+</ion-content>

@@ -1,17 +1,18 @@
-import { Component } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
 
 import { UserData } from '../../providers/user-data';
-import { UserOptions } from '../../interfaces/user-options';
+import { Credentials } from '../../auth/models/user';
+// import { UserOptions } from '../../interfaces/user-options';
 
 const log = console.log;
 @Component({
-  selector: 'page-login',
-  templateUrl: 'login.html',
-  styleUrls: ['./login.scss'],
+  selector: 'ig-login-form',
+  templateUrl: 'login-form.html',
+  styleUrls: ['./login-form.scss'],
 })
-export class LoginPage {
+export class LoginForm {
   loginForm: FormGroup;
 
   error_messages = {
@@ -29,6 +30,19 @@ export class LoginPage {
     ],
   };
 
+  @Input()
+  set pending(isPending: boolean) {
+    if (isPending) {
+      this.loginForm.disable();
+    } else {
+      this.loginForm.enable();
+    }
+  }
+
+  @Input() errorMessage: string | null;
+
+  @Output() submitted = new EventEmitter<Credentials>();
+
   constructor(
     public userData: UserData, //
     public router: Router,
@@ -45,7 +59,7 @@ export class LoginPage {
         ])
       ),
       email: new FormControl(
-        '',
+        'igroup@ig-mail.com',
         Validators.compose([
           Validators.required,
           Validators.minLength(8),
@@ -56,16 +70,25 @@ export class LoginPage {
     });
   }
 
-  onLogin(form: FormGroup) {
-    if (form.valid) {
+  submit() {
+    if (this.loginForm.valid) {
       this.userData.login(this.loginForm.value.email && this.loginForm.value.password);
-      this.router.navigateByUrl('/app/tabs/welcome');
+      this.router.navigateByUrl('/app/tabs/schedule');
     }
     // log('email:', this.loginForm.value.email);
     // log('password:', this.loginForm.value.password);
   }
 
+  // submit() {
+  //   if (this.loginForm.valid) {
+  //     this.submitted.emit(this.loginForm.value);
+  //     log('submitted');
+  //     this.router.navigateByUrl('/app/tabs/schedule');
+  //   }
+  // }
+
   onSignup() {
     this.router.navigateByUrl('/signup');
   }
 }
+/* This is a PRESENTATION component: i.e UI and UI display */

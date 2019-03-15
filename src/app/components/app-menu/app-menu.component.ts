@@ -34,6 +34,11 @@ export class AppMenuComponent implements OnInit {
       icon: 'map',
     },
     {
+      title: 'Notification',
+      url: '/app/tabs/speakers',
+      icon: 'notifications-off',
+    },
+    {
       title: 'About',
       url: '/app/tabs/about',
       icon: 'information-circle',
@@ -86,11 +91,7 @@ export class AppMenuComponent implements OnInit {
     return this.router.navigateByUrl('/app/tabs/welcome');
   }
 
-  // logout() {
-  //   this.userData.logout().then(() => {
-  //     return this.router.navigateByUrl('/app/tabs/welcome');
-  //   });
-  // }
+  themes() {}
 
   openTutorial() {
     this.menu.enable(false);

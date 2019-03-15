@@ -9,7 +9,7 @@ import { UserData } from '../../providers/user-data';
 @Component({
   template: `
     <ion-list>
-      <ion-item button routerLink="/login">
+      <ion-item button routerLink="/login" (click)="dismiss()">
         <ion-icon slot="start" name="log-in"></ion-icon>
         <ion-label>Login</ion-label>
       </ion-item>
@@ -17,7 +17,7 @@ import { UserData } from '../../providers/user-data';
         <ion-icon slot="start" name="document"></ion-icon>
         <ion-label>Documentation</ion-label>
       </ion-item>
-      <ion-item button (click)="presentColorPopover($event)">
+      <ion-item button (click)="presentColorPopover($event)" (click)="dismiss()">
         <ion-icon slot="start" name="color-palette"></ion-icon>
         <ion-label>Themes</ion-label>
       </ion-item>
@@ -25,36 +25,31 @@ import { UserData } from '../../providers/user-data';
         <ion-icon slot="start" name="logo-github"></ion-icon>
         <ion-label>GitHub Repo</ion-label>
       </ion-item>
-      <ion-item button (click)="support()">
-        <ion-icon slot="start" name="wallet"></ion-icon>
-        <ion-label>Support</ion-label>
+      <ion-item button (click)="dismiss()">
+        <ion-icon slot="start" name="exit"></ion-icon>
+        <ion-label>Exit</ion-label>
       </ion-item>
     </ion-list>
   `,
 })
 export class MoreMenuPopover {
-  constructor(public popoverCtrl: PopoverController) {}
+  constructor(public popoverCtrlr: PopoverController) {}
 
-  support() {
+  dismiss() {
     // this.app.getRootNavs()[0].push('/support');
-    this.popoverCtrl.dismiss();
+    this.popoverCtrlr.dismiss();
   }
 
   close(url: string) {
     window.open(url, '_blank');
-    this.popoverCtrl.dismiss();
+    this.popoverCtrlr.dismiss();
   }
 
   async presentColorPopover(event: Event) {
-    const colorPopover = await this.popoverCtrl.create({
+    const colorPopover = await this.popoverCtrlr.create({
       component: ColorPopover,
       event,
     });
     await colorPopover.present();
   }
-
-  // async logout() {
-  //   await this.userData.logout();
-  //   return this.router.navigateByUrl('/app/tabs/welcome');
-  // }
 }

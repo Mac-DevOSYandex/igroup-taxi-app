@@ -15,11 +15,8 @@ const routes: Routes = [
           {
             path: '',
             component: WelcomePage,
+            // loadChildren: '../welcome/welcome.module#WelcomeModule',
           },
-          // {
-          //   path: 'session/:sessionId',
-          //   loadChildren: '../session-detail/session-detail.module#SessionDetailModule',
-          // },
         ],
       },
       {

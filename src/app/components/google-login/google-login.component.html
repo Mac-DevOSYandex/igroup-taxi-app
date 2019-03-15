@@ -1,0 +1,13 @@
+<div *ngIf="(user | async) || {} as user">
+    google-login works!
+    <ion-button padding shape="round" *ngIf="!user.uid" (tap)="googleLogin()">
+        Login With Goole
+    </ion-button>
+    <div *ngIf="user.uid">
+        You are already logged in {{ user.uid }}
+
+        <ion-button padding shape="round" (tap)="signOut()">
+            Logout
+        </ion-button>
+    </div>
+</div>

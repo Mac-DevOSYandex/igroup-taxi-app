@@ -20,6 +20,9 @@ import { PopoverController } from '@ionic/angular';
       <ion-item button (click)="support()">
         <ion-label>Support</ion-label>
       </ion-item>
+      <ion-item button (click)="dismiss()">
+        <ion-label>Calling Dismiss</ion-label>
+      </ion-item>
     </ion-list>
   `,
 })
@@ -28,6 +31,10 @@ export class PopoverPage {
 
   support() {
     // this.app.getRootNavs()[0].push('/support');
+    this.popoverCtrl.dismiss();
+  }
+
+  dismiss() {
     this.popoverCtrl.dismiss();
   }
 

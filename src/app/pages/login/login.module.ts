@@ -4,12 +4,20 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 import { RouterModule, Routes } from '@angular/router';
 
-import { LoginPage } from './login';
+import { LoginForm } from './login-form';
+// import { LoginPage } from './login-page';
+// import { GoogleLoginComponent } from '../../components/google-login/google-login.component';
+
+const LOGIN = [
+  LoginForm, //
+  // GoogleLoginComponent,
+  // LoginPage,
+];
 
 const loginRoutes: Routes = [
   {
     path: '',
-    component: LoginPage,
+    component: LoginForm,
   },
 ];
 
@@ -21,7 +29,7 @@ const loginRoutes: Routes = [
     ReactiveFormsModule,
     IonicModule,
   ],
-  declarations: [LoginPage],
-  exports: [RouterModule],
+  declarations: [...LOGIN],
+  exports: [RouterModule, ...LOGIN],
 })
 export class LoginModule {}

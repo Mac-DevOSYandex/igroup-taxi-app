@@ -1,0 +1,99 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+
+    <ion-title>Login</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="login-logo">
+    <img src="../../../assets/png/treeoflife.png" sizes="10vh, 10vw" alt="Ionic logo" />
+  </div>
+
+  <!-- <ion-card> -->
+  <form [formGroup]="loginForm" (ngSubmit)="submit()">
+    <ion-item>
+      <ion-label position="stacked" color="primary">Email</ion-label>
+      <ion-input
+        formControlName="email"
+        name="email"
+        type="email"
+        placeholder="username@domain.com"
+        spellcheck="false"
+        autocapitalize="off"
+        required
+      >
+      </ion-input>
+    </ion-item>
+    <ion-text class="error-messages" color="danger">
+      <ng-container *ngFor="let error of error_messages.email" padding-left>
+        <div
+          class="error-message"
+          *ngIf="
+            loginForm.get('email').hasError(error.type) &&
+            (loginForm.get('email').dirty || loginForm.get('email').touched)
+          "
+        >
+          {{ error.message }}
+        </div>
+      </ng-container>
+    </ion-text>
+
+    <ion-item>
+      <ion-label position="stacked" color="primary">Password</ion-label>
+      <ion-input
+        formControlName="password"
+        name="password"
+        type=""
+        placeholder="password"
+        autocapitalize="off"
+        required
+      >
+      </ion-input>
+    </ion-item>
+
+    <ion-text class="error-messages" color="danger">
+      <ng-container *ngFor="let error of error_messages.password" padding-left>
+        <div
+          class="error-message"
+          *ngIf="
+            loginForm.get('password').hasError(error.type) &&
+            (loginForm.get('password').dirty || loginForm.get('password').touched)
+          "
+        >
+          {{ error.message }}
+        </div>
+      </ng-container>
+    </ion-text>
+
+    <!-- <ion-row padding responsive-sm>
+        <ion-col> -->
+    <ion-button
+      padding
+      [disabled]="!loginForm.valid"
+      shape="round"
+      size="default"
+      color="primary"
+      type="submit"
+      expand="block"
+    >
+      Login
+    </ion-button>
+    <!-- This should provide Firebase login -->
+    <!-- <ig-google-login></ig-google-login> -->
+    <ion-button padding shape="round" size="default" color="danger" expand="block">
+      <ion-icon padding name="logo-google"></ion-icon>
+      Login With Google+
+    </ion-button>
+    <ion-button padding shape="round" size="default" color="dark" expand="block">
+      <ion-icon padding name="logo-github"></ion-icon>
+      Login With Github
+    </ion-button>
+    <!-- </ion-col>
+      </ion-row> -->
+  </form>
+  <!-- </ion-card> -->
+</ion-content>

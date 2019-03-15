@@ -85,24 +85,38 @@
               </ion-label>
             </ion-item>
           </ion-menu-toggle>
+
+          <ion-menu-toggle auto-hide="false">
+            <ion-item button (click)="openTutorial()">
+              <ion-icon slot="start" name="school"></ion-icon>
+              <ion-label>Tutorial</ion-label>
+            </ion-item>
+          </ion-menu-toggle>
+
+          <ion-menu-toggle auto-hide="false">
+            <ion-item button (click)="openTutorial()">
+              <ion-icon slot="start" name="rocket"></ion-icon>
+              <ion-label>Getting Started</ion-label>
+            </ion-item>
+          </ion-menu-toggle>
         </ion-list>
 
         <ion-list>
           <ion-list-header>
-            Home
+            Settings
           </ion-list-header>
           <ion-menu-toggle auto-hide="false">
-            <ion-item button (click)="openTutorial()">
-              <ion-icon slot="start" name="rocket"></ion-icon>
-              <ion-label>Get Started</ion-label>
+            <ion-item button (click)="themes()">
+              <ion-icon slot="start" name="color-palette"></ion-icon>
+              <ion-label>Themes</ion-label>
             </ion-item>
           </ion-menu-toggle>
 
           <ion-menu-toggle auto-hide="false">
             <ion-item routerLink="/app/tabs/schedule">
-              <ion-icon slot="start" name="home"></ion-icon>
+              <ion-icon slot="start" name="settings"></ion-icon>
               <ion-label>
-                Welcome
+                Settings
               </ion-label>
             </ion-item>
           </ion-menu-toggle>

@@ -48,19 +48,19 @@ const themes = {
 @Component({
   template: `
     <ion-list>
-      <ion-item button (click)="changeTheme('igroup')">
+      <ion-item button (click)="changeTheme('igroup')" (click)="dismiss()">
         <ion-label>iGroup</ion-label>
       </ion-item>
-      <ion-item button (click)="changeTheme('autumn')">
+      <ion-item button (click)="changeTheme('autumn')" (click)="dismiss()">
         <ion-label>Autumn</ion-label>
       </ion-item>
-      <ion-item button (click)="changeTheme('dark')">
+      <ion-item button (click)="changeTheme('dark')" (click)="dismiss()">
         <ion-label>Dark</ion-label>
       </ion-item>
-      <ion-item button (click)="changeTheme('light')">
+      <ion-item button (click)="changeTheme('light')" (click)="dismiss()">
         <ion-label>Light</ion-label>
       </ion-item>
-      <ion-item button (click)="changeTheme('neon')">
+      <ion-item button (click)="changeTheme('neon')" (click)="dismiss()">
         <ion-label>Neon</ion-label>
       </ion-item>
     </ion-list>
@@ -69,16 +69,15 @@ const themes = {
 export class ColorPopover {
   // @ViewChildren(ColorMenu) colorMenu: QueryList<ColorMenu>;
 
-  constructor(public popoverCtrl: PopoverController, private theme: ThemeSettings) {}
+  constructor(public popoverCtrlr: PopoverController, private theme: ThemeSettings) {}
 
-  support() {
-    // this.app.getRootNavs()[0].push('/support');
-    this.popoverCtrl.dismiss();
+  dismiss() {
+    this.popoverCtrlr.dismiss();
   }
 
   close(url: string) {
     window.open(url, '_blank');
-    this.popoverCtrl.dismiss();
+    this.popoverCtrlr.dismiss();
   }
 
   changeTheme(name: any) {

@@ -7,9 +7,9 @@
 	<key>AD_UNIT_ID_FOR_INTERSTITIAL_TEST</key>
 	<string>ca-app-pub-3940256099942544/4411468910</string>
 	<key>CLIENT_ID</key>
-	<string>989122002197-bo74njihvurvua2d85hjc4c5h9hmg09v.apps.googleusercontent.com</string>
+	<string>989122002197-olhc26030dqjt1oskjebga462d3k4h83.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.989122002197-bo74njihvurvua2d85hjc4c5h9hmg09v</string>
+	<string>com.googleusercontent.apps.989122002197-olhc26030dqjt1oskjebga462d3k4h83</string>
 	<key>API_KEY</key>
 	<string>AIzaSyAjHCKhUN_oHQYkrsHU1MyYwZCdqUplBZo</string>
 	<key>GCM_SENDER_ID</key>
@@ -17,7 +17,7 @@
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>com.igroupdesign.taxiapp</string>
+	<string>com.igroup.taxiapp</string>
 	<key>PROJECT_ID</key>
 	<string>igroup-taxi-app</string>
 	<key>STORAGE_BUCKET</key>
@@ -33,7 +33,7 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:989122002197:ios:17d3582e616e5254</string>
+	<string>1:989122002197:ios:21cbe8410e6752c0</string>
 	<key>DATABASE_URL</key>
 	<string>https://igroup-taxi-app.firebaseio.com</string>
 </dict>

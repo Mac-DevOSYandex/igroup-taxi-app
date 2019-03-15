@@ -8,6 +8,11 @@ const appRoutes: Routes = [
     redirectTo: '/tutorial',
     pathMatch: 'full',
   },
+  // home is used for testing
+  {
+    path: 'home',
+    loadChildren: './pages/home/home.module#HomeModule',
+  },
   {
     path: 'account',
     loadChildren: './pages/account/account.module#AccountModule',
